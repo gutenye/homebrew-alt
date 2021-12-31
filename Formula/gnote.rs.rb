@@ -3,11 +3,11 @@ require "formula"
 class GnoteRs < Formula
   desc "CLI for gnote"
   homepage "https://github.com/gutenye/gnote"
-  url "https://github.com/gutenye/gnote/releases/download/rs1.0.1/gnote.rs-macos-arm64-v1.0.1"
-  sha256 "d5a7677f2313103c314da342959397c60402dd3934d0342f05c025159a3d065f"
+  url "https://github.com/gutenye/gnote/releases/download/rs1.0.3/gnote.rs-macos-arm64-v1.0.3"
+  sha256 "707014600e5227c00d6ec21a33dc9eb16445ae51b208e897ab84305bc33fa1a6"
 
   def install
-    bin.install "gnote.rs-macos-arm64-v1.0.1" => "gnote.rs"
+    bin.install "gnote.rs-macos-arm64-v1.0.3" => "gnote.rs"
   end
 
   def plist; <<~EOS
