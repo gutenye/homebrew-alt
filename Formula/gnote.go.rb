@@ -1,13 +1,13 @@
 require "formula"
 
-class Gnote < Formula
+class GnoteGo < Formula
   desc "CLI for gnote"
   homepage "https://github.com/gutenye/gnote"
-  url "https://github.com/gutenye/gnote/releases/download/1.0.1/macos.tar.gz"
-  sha256 "8c620052c66e484704f3a4e8faa4e7822eee6d90d529a86b5321d09b2176495f"
+  url "https://github.com/gutenye/gnote/releases/download/go1.0.4/gnote.go-macos-arm64-v1.0.4"
+  sha256 "ea3e3218c50719b91053c92caaa7154040583d7cc13c3df06d8716d7c87777fb"
 
   def install
-    bin.install "gnote"
+    bin.install "gnote.go-macos-arm64-v1.0.4" => "gnote.go"
   end
 
   def plist; <<~EOS
@@ -19,8 +19,9 @@ class Gnote < Formula
         <string>#{plist_name}</string>
         <key>ProgramArguments</key>
         <array>
-          <string>#{opt_bin}/gnote</string>
-          <string>watch</string>
+          <string>#{opt_bin}/gnote.go</string>
+          <string>tags</string>
+          <string>--watch</string>
         </array>
         <key>EnvironmentVariables</key>
         <dict>
@@ -37,9 +38,9 @@ class Gnote < Formula
         <key>WorkingDirectory</key>
         <string>/Users/guten</string>
         <key>StandardErrorPath</key>
-        <string>#{var}/log/gnote.log</string>
+        <string>#{var}/log/gnote.go.log</string>
         <key>StandardOutPath</key>
-        <string>#{var}/log/gnote.log</string>
+        <string>#{var}/log/gnote.go.log</string>
       </dict>
     </plist>
   EOS
